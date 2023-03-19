@@ -73,16 +73,19 @@ xxx-servlet.xml 用作配置控制器要使用到的一些資訊。
       'org.springframework.web.servlet.DispatcherServlet' 
       is not assignable to 'javax.servlet.Servlet,jakarta.servlet.Servlet'
       ```
-   4. ***重要：每次更新完 pom.xml 都要 Reload Maven 一下, 不然下面步驟的 Web Facets 不會出現，也不會有 Spring
+   4. ***重要：每次更新完 pom.xml 都要 Reload Maven 一下,   
+      不然下面步驟的 Web Facets 不會出現，  
+      也不會有 Spring MVC servlet context
 
 
 4. 將新增的模組設置為 web 模組
-   1. 創建新資料夾 ./src/main/webapp
+   1. 創建新資料夾 ./src/main/webapp，資料夾圖示上會有藍點
    2. 通過 IDEA 新增 web.xml 配置文件 (完成後新增 ./webapp/WEB-INFO/web.xml)
       ```
       Project structure > Module > Web > Deployment descriptor > +
-      若果在 Module 下沒看到 web (webapp 資料夾沒有藍點), 
-      必須先在 Facets 下新增 Web Facets, 并添加給該模組
+      若果在 Module 下沒看到 web (webapp 資料夾沒有藍點)，
+      很大機會是因為前面修改了 pom.xml 後沒有 reload maven, 
+      Reload 後仍沒看到 web 的話，可在 Facets 下新增 Web Facets, 并添加給該模組
       ```
       
 5. 配置 web.xml  
