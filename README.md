@@ -47,6 +47,7 @@ xxx-servlet.xml 用作配置控制器要使用到的一些資訊。
    2. 添加 \<maven.compiler.source> 與 <maven.compiler.target> 標簽  
       \<maven.compiler.source> 告訴 maven 你寫的源代碼是用哪個版本的 Java  
       \<maven.compiler.target> 告訴 maven 要將你的源代碼編譯成哪一個版本的 Java Bytecode  
+      若果一開始新建的專案不是 Empty Project，而是 New Project 而又選擇了 Maven，IDEA 會自動添加以下代碼
       ```
       <properties>
           <maven.compiler.source>17</maven.compiler.source>
