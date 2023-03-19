@@ -26,14 +26,9 @@ xxx-servlet.xml 用作配置控制器要使用到的一些資訊。
 
 步驟如下：  
 
-1. 在 IDEA 中創建空專案
+1. 在 IDEA 中創建空專案 (Empty Project)
    1. name: 專案名稱
    2. Location: 專案儲存位置
-   3. Language: 選 Java
-   4. Build system: 選 Maven
-   5. JDK: 此專案選了 17
-   6. GroupId: com.xxx
-   7. ArtifactId: 通常跟專案名稱
 
 
 2. 於專案中創建新的 Maven-based module (不使用 Maven Archetype)
@@ -77,12 +72,16 @@ xxx-servlet.xml 用作配置控制器要使用到的一些資訊。
       'org.springframework.web.servlet.DispatcherServlet' 
       is not assignable to 'javax.servlet.Servlet,jakarta.servlet.Servlet'
       ```
+   4. ***重要：每次更新完 pom.xml 都要 Reload Maven 一下, 不然下面步驟的 Web Facets 不會出現，也不會有 Spring
+
 
 4. 將新增的模組設置為 web 模組
    1. 創建新資料夾 ./src/main/webapp
    2. 通過 IDEA 新增 web.xml 配置文件 (完成後新增 ./webapp/WEB-INFO/web.xml)
       ```
       Project structure > Module > Web > Deployment descriptor > +
+      若果在 Module 下沒看到 web (webapp 資料夾沒有藍點), 
+      必須先在 Facets 下新增 Web Facets, 并添加給該模組
       ```
       
 5. 配置 web.xml  
